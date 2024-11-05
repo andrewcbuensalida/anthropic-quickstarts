@@ -45,6 +45,19 @@ docker run \
     -p 8080:8080 \
     -it ghcr.io/anthropics/anthropic-quickstarts:computer-use-demo-latest
 ```
+If on Windows, in command prompt
+```cmd
+set ANTHROPIC_API_KEY=<your_api_key>
+echo %ANTHROPIC_API_KEY%
+docker run ^
+    -e ANTHROPIC_API_KEY=%ANTHROPIC_API_KEY% ^
+    -v %USERPROFILE%\.anthropic:/home/computeruse/.anthropic ^
+    -p 5900:5900 ^
+    -p 8501:8501 ^
+    -p 6080:6080 ^
+    -p 8080:8080 ^
+    -it ghcr.io/anthropics/anthropic-quickstarts:computer-use-demo-latest
+```
 
 Once the container is running, see the [Accessing the demo app](#accessing-the-demo-app) section below for instructions on how to connect to the interface.
 
